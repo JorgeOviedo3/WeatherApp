@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background: linear-gradient(300deg, #4a4a4a, #292929, #000000);
+  background-size: 180% 180%;
+  animation: gradient-animation 30s ease infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
