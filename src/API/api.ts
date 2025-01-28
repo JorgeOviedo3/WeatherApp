@@ -6,7 +6,9 @@ const API_URLS = {
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/
     ${lat},${lon}?key=${import.meta.env.VITE_VISUALCROSSING_APIKEY}&unitGroup=metric`,
   GET_CITY_NAME: (lat: number, lon: number) =>
-    `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${lat}&lng=${lon}&username=sabahrahal`,
+    `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${lat}&lng=${lon}&username=${
+      import.meta.env.VITE_GEONAMES_USERNAME
+    }`,
 };
 
 export async function getCities(city: string) {
