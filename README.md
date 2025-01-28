@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This web application provides a simple way to check the weather forecast for any location in the world.
 
-Currently, two official plugins are available:
+Just type the name of the city you are interested in and select it from the list of suggestions. The app will then show you the current weather, as well as a 15-day forecast with hourly data and detailed information such as temperature, minimum and maximum temperature, and cloudiness.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Tech Stack
 
-## Expanding the ESLint configuration
+This project is built using [Vite](https://vitejs.dev/guide/).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Core technologies**
 
-- Configure the top-level `parserOptions` property like this:
+- React
+- React Router
+- Tailwind CSS
+- Framer Motion
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### API
+
+> This project features data from [Visual Crossing](https://www.visualcrossing.com/), [Open Weather](https://openweathermap.org/) and [Geonames API](http://www.geonames.org/)
+
+### Run Locally
+
+1. Clone the project
+
+```bash
+  git clone https://github.com/JorgeOviedo3/WeatherApp
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Go to the project directory
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+  cd ./WeatherApp
 ```
+
+3. Install dependencies
+
+```bash
+  pnpm install
+```
+
+4. Create .env file on root and add:
+
+```env
+  VITE_OPENWEATHER_APIKEY=yourapikey
+  VITE_VISUALCROSSING_APIKEY=yourapikey
+  VITE_GEONAMES_USERNAME=yourusername
+```
+
+> Obtain your API keys from these sites: [Open Weather](https://openweathermap.org/), [Visual Crossing](https://www.visualcrossing.com/), [Geonames](https://www.geonames.org/)
+
+> Note: After creating geonames account you need to go to [Manage Account](https://www.geonames.org/manageaccount) and enable the Free Web Services if you haven't yet.
+
+5. Start the server
+
+```bash
+  pnpm run dev
+```
+
+To view it in your browser, open http://localhost:5173
